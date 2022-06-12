@@ -1,0 +1,21 @@
+<script setup>
+import Table from './components/Table.vue';
+</script>
+
+<template>
+  <Table />
+</template>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+</style>
