@@ -84,16 +84,14 @@ export const winner = (callback) => {
       square3.getAttribute("status") === "red" &&
       square4.getAttribute("status") === "red"
     ) {
-      console.log("Red wins");
-      return callback("red");
+      return callback("red", [square1, square2, square3, square4]);
     } else if (
       square1.getAttribute("status") === "yellow" &&
       square2.getAttribute("status") === "yellow" &&
       square3.getAttribute("status") === "yellow" &&
       square4.getAttribute("status") === "yellow"
     ) {
-      console.log("Yellow wins");
-      return callback("yellow");
+      return callback("yellow", [square1, square2, square3, square4]);
     }
   }
   return null;
