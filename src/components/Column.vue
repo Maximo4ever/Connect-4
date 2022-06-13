@@ -6,7 +6,7 @@
   const indexSlots = [1,2,3,4,5,6]
 </script>
 <template>
-    <div class="col">
+    <div class="col" :class="'col-'+nameCol">
       <Slot v-for="(n,index) in indexSlots" :slot="{name:nameCol,index: index+1}" />
     </div>
 </template>
