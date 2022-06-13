@@ -1,9 +1,11 @@
 <script setup>
   import { inject, ref } from 'vue';
   import Column from './Column.vue';
+  import { winner } from './IsWinner';
 
   const nameColumns = ["a","b","c","d","e","f","g"];
   const redPlayer = ref(true);
+  const wins = inject("totalWins")
   
   const playToken = async (nameCol) => {
     const color = redPlayer.value ? "red" : "yellow";
@@ -17,6 +19,11 @@
     column[lastSlot].style.background = color;
     // Cambia el turno
     redPlayer.value = !redPlayer.value;
+
+    winner((winner) => {  
+      if (winner !== null) wins.value[winner] += 1;
+      console.log(winner);
+    });
   }
   
   const ballAnimation = async (column, color) => {
