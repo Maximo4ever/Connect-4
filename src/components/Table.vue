@@ -23,7 +23,12 @@
     winner((winner, winSlots) => {  
       if (winner === null) return
       totalWins.value[color] += 1;
-      winSlots.forEach((winSlot) => winSlot.style.borderColor = "#FFFFFF");
+      winSlots.forEach((winSlot) => {
+        winSlot.style.borderColor = "#FFFFFF";
+        setTimeout(() => {
+          winSlot.style.borderColor = null;
+        }, 1500);
+      });
       setTimeout(() => {
         restartGame()
       }, 1500);
